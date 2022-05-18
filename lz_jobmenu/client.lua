@@ -1,13 +1,23 @@
+-- Config --
+Config = {}
+
+Config.Locale = "es"
+Config.OpenKey = 'F3'
+Config.CommandName = 'jobinfo'
+Config.Menu = true
+Config.Command = true
+-- end config --
+
 local ESX = exports['es_extended']:getSharedObject()
 
-if Config.Menu == true then
+if (Config.Menu) == true then
     RegisterCommand('+openjobmenu', function()
         openJobMenu()
     end)
     RegisterKeyMapping('+openjobmenu', 'Abrir Menú de trabajo', 'keyboard', Config.OpenKey)
 end
 
-if Config.Command == true then
+if (Config.Command) == true then
      RegisterCommand(Config.CommandName, function()
          openJobMenu()
      end)
